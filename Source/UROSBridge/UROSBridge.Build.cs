@@ -8,10 +8,10 @@ public class UROSBridge : ModuleRules
 	public UROSBridge(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-		
+
         	PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
         	PrivateIncludePaths.Add(Path.Combine(ModuleDirectory, "Private"));
-		
+
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
@@ -20,13 +20,14 @@ public class UROSBridge : ModuleRules
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
-			
-		
+
+
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
 				"CoreUObject",
 				"Engine",
+                                "DeveloperSettings",
 				"Slate",
 				"SlateCore",
 				"Core",
@@ -34,14 +35,14 @@ public class UROSBridge : ModuleRules
 				"PacketHandler",
 				"libWebSockets",
 				"OpenSSL",
-				"zlib",				
+				"zlib",
 				"Json",
 				"JsonUtilities",
-				// ... add private dependencies that you statically link with here ...	
+				// ... add private dependencies that you statically link with here ...
 			}
 			);
-		
-		
+
+
 		DynamicallyLoadedModuleNames.AddRange(
 			new string[]
 			{
