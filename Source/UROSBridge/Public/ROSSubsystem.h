@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "ROSBridgeHandler.h"
 #include "ROSSubsystem.generated.h"
 
 UINTERFACE(MinimalAPI)
