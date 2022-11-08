@@ -16,10 +16,10 @@ class UROSBRIDGE_API URosSettings : public UDeveloperSettings
 
 public:
     UPROPERTY(Config, EditAnywhere, BlueprintReadOnly, Category = "General")
-      FString ROSBridgeServerHost;
+          FString ROSBridgeServerHost = TEXT("127.0.0.1");
 
     UPROPERTY(Config, EditAnywhere, BlueprintReadOnly, Category = "General")
-      int32 ROSBridgeServerPort;
+      int32 ROSBridgeServerPort = 9090;
 
     UPROPERTY(Config, EditAnywhere, BlueprintReadOnly, Category = "General")
       bool bConnectToROS = true;
