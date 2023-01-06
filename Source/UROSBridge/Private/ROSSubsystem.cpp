@@ -2,21 +2,6 @@
 #include "ROSSubsystem.h"
 #include "RosSettings.h"
 
-void IRosInterface::Connect(const FString& InIp, const int32& InPort)
-{
-  UE_LOG(LogROS, Log, TEXT("Connecting to %s:%d via GameInstance"), *InIp, InPort);
-  ROSHandler = MakeShareable<FROSBridgeHandler>(new FROSBridgeHandler(InIp, InPort));
-  ROSHandler->Connect();
-}
-
-void IRosInterface::Disconnect()
-{
-  if (ROSHandler.IsValid())
-    {
-      ROSHandler->Disconnect();
-    }
-}
-
 void UROSGameInstanceSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
   Super::Initialize(Collection);
