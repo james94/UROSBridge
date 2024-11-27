@@ -2,8 +2,11 @@
 
 #pragma once
 
-#include "Core.h"
-#include "Json.h"
+// #include "Core.h"
+#include "CoreMinimal.h"
+// #include "Json.h"
+#include "Dom/JsonObject.h"
+#include "Serialization/JsonSerializer.h"
 
 class UROSBRIDGE_API FROSBridgeSrv
 {

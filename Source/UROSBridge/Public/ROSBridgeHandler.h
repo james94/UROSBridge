@@ -6,6 +6,7 @@
 #include "CoreGlobals.h"
 #include "Containers/Queue.h"
 
+#include "UROSBridge.h"
 #include "ROSBridgeMsg.h"
 #include "ROSBridgeSrv.h"
 #include "ROSBridgePublisher.h"

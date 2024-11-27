@@ -1,11 +1,14 @@
 // Copyright 2018, Institute for Artificial Intelligence - University of Bremen
 
 #include "ROSBridgeHandler.h"
-#include "UROSBridge.h"
-#include "Core.h"
+// #include "UROSBridge.h"
+// #include "Core.h"
 #include "Modules/ModuleManager.h"
-#include "Networking.h"
-#include "Json.h"
+// #include "Networking.h"
+#include "Interfaces/IPv4/IPv4Endpoint.h"
+#include "Sockets.h"
+#include "SocketSubsystem.h"
+// #include "Json.h"
 
 int32 FROSBridgeHandler::ThreadInstanceIdx = 0;
 
@@ -210,7 +213,7 @@ UE_LOG(LogROS, Log, TEXT("[%s] Json Message: %s"), *FString(__FUNCTION__), *Json
 		const FString Id = JsonObject->GetStringField(TEXT("id"));
 		const FString ServiceName = JsonObject->GetStringField(TEXT("service"));
 		TSharedPtr< FJsonObject > ValuesObj;
-		if (JsonObject->HasField("values"))
+		if (JsonObject->HasField(TEXT("values")))
 		{
 			// has values
 			ValuesObj = JsonObject->GetObjectField(TEXT("values"));
@@ -251,7 +254,7 @@ UE_LOG(LogROS, Log, TEXT("[%s] Json Message: %s"), *FString(__FUNCTION__), *Json
 		// there is always an Id for rosbridge_server generated service call
 		const FString ServiceName = JsonObject->GetStringField(TEXT("service"));
 		TSharedPtr< FJsonObject > ArgsObj;
-		if (JsonObject->HasField("args"))
+		if (JsonObject->HasField(TEXT("args")))
 		{
 			ArgsObj = JsonObject->GetObjectField(TEXT("args"));
 		}

@@ -4,7 +4,8 @@
 //
 #pragma  once
 #include "HTML5NetworkingPrivate.h"
-#include "Core.h"
+// #include "Core.h"
+#include "CoreMinimal.h"
 #include "Runtime/Sockets/Private/BSDSockets/SocketSubsystemBSD.h"
 class FWebSocket
 {

@@ -3,7 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Json.h"
+// #include "Json.h"
+#include "Dom/JsonObject.h"
+#include "Serialization/JsonSerializer.h"
 
 class UROSBRIDGE_API FROSTime
 {
@@ -31,8 +33,8 @@ public:
 
 	static FROSTime GetFromJson(TSharedPtr<FJsonObject> JsonObject)
 	{
-		uint32 Secs = (uint32)(JsonObject->GetNumberField("secs"));
-		uint32 NSecs = (uint32)(JsonObject->GetNumberField("nsecs"));
+		uint32 Secs = (uint32)(JsonObject->GetNumberField(TEXT("secs")));
+		uint32 NSecs = (uint32)(JsonObject->GetNumberField(TEXT("nsecs")));
 		return FROSTime(Secs, NSecs);
 	}
 

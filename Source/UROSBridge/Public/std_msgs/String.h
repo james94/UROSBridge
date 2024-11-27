@@ -33,7 +33,7 @@ namespace std_msgs
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override 
 		{
-			Data = JsonObject->GetStringField("data");
+			Data = JsonObject->GetStringField(TEXT("data"));
 		}
 
 		virtual FString ToString() const override

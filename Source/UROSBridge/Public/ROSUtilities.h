@@ -3,15 +3,15 @@
 
 #include "ROSUtilities.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FROSTopic
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="ROS")
 	FString Topic;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="ROS")
 	FString Type;
 
 	int32 ID;
